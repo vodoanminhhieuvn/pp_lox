@@ -1,6 +1,5 @@
 #include "scanner.h"
 #include "types/literal.h"
-
 #include <map>
 
 #include <errors_and_debug/error_reporter.h>
@@ -123,6 +122,13 @@ void Scanner::eatString() {
 }
 
 auto Scanner::isAtEnd() -> bool { return current >= source.size(); }
+
+auto Scanner::matchNext(char expected) -> bool {
+  bool nextMatches = (peek() == expected);
+  if (nextMatches)
+    advance();
+  return nextMatches;
+}
 
 auto Scanner::peek() -> char {
   if (isAtEnd())

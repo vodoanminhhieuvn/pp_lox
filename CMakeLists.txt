@@ -21,3 +21,6 @@ aux_source_directory(errors_and_debug EAD_SRC)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_sources(${PROJECT_NAME} PRIVATE ${SCA_SRC} ${TYP_SRC} ${EAD_SRC})
+
+add_subdirectory(tests)
+
