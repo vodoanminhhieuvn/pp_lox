@@ -30,4 +30,5 @@ endfunction()
 
 add_wlox_test(NodeTypeTests node_types_test.cc)
 add_wlox_test(ScannerTests scanner_test.cc)
+add_wlox_test(PrettyPrinterTests pretty_printer_test.cc)
 
