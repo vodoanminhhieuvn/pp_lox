@@ -94,7 +94,7 @@ auto createAssignmentEPV(Token varName, ExprPtrVariant expr) -> ExprPtrVariant;
 auto createLogicalEPV(ExprPtrVariant left, Token op, ExprPtrVariant right)
     -> ExprPtrVariant;
 auto createCallEPV(ExprPtrVariant callee, Token paren,
-                   std::vector<StmtPtrVariant> fnBody) -> ExprPtrVariant;
+                   std::vector<ExprPtrVariant> arguments) -> ExprPtrVariant;
 auto createFuncEPV(std::vector<Token> params,
                    std::vector<StmtPtrVariant> fnBody) -> ExprPtrVariant;
 auto createGetEPV(ExprPtrVariant expr, Token name) -> ExprPtrVariant;
@@ -106,6 +106,8 @@ auto createSuperEPV(Token keyword, Token method) -> ExprPtrVariant;
 auto createExprSPV(ExprPtrVariant expr) -> StmtPtrVariant;
 auto createPrintSPV(ExprPtrVariant expr) -> StmtPtrVariant;
 auto createBlockSPV(std::vector<StmtPtrVariant> statements) -> StmtPtrVariant;
+auto createVarSPV(Token varName, std::optional<ExprPtrVariant> initializer)
+    -> StmtPtrVariant;
 auto createIfSPV(ExprPtrVariant condition, StmtPtrVariant thenBranch,
                  std::optional<StmtPtrVariant> elseBranch) -> StmtPtrVariant;
 auto createWhileSPV(std::optional<ExprPtrVariant> condition,
